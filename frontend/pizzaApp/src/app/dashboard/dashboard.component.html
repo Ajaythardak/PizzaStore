@@ -1,0 +1,74 @@
+
+<h1 style=" padding-left: 310px;"> Welcome to The Pizza Store </h1> <img src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg" alt="pizza image" style="height: 270px; width: 800px; padding-left: 90px; padding-top: -10px; ">
+<br>
+<!-- <img src="../src/assets/pizza1.jpg" alt="pizza 1"> -->
+<!-- your order:- {{pizzaName.value}} -->
+
+<br>
+<h2>Place Your Pizza Order</h2>
+<br>
+<h3>Please enter details of pizza you want :-</h3>
+<div class="example-container" style="padding-bottom: 70px;">
+  <form (submit)="onPlaceOrder(data.value)" #data="ngForm">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Pizza Id</mat-label>
+        <input matInput type="number" name='pizzaId' #pizzaId="ngModel" 
+        [(ngModel)]="pizzaform.pizzaId" required>
+    </mat-form-field>
+      <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Pizza Name</mat-label>
+      <input matInput name='pizzName' #pizzaName="ngModel" 
+      [(ngModel)]="pizzaform.pizzaName" required>
+    </mat-form-field>
+     <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Topping</mat-label>
+      <input matInput name='topping' #topping="ngModel" 
+      [(ngModel)]="pizzaform.topping" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Size</mat-label>
+        <input matInput name='size' #size="ngModel" 
+        [(ngModel)]="pizzaform.size" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter No. of pizza</mat-label>
+        <input matInput type="number" name='quantity' #quantity="ngModel" 
+        [(ngModel)]="pizzaform.quantity" required>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="!data.valid">Place Order</button>
+  </form>
+  </div>
+  <button class="getorder" mat-raised-button color="primary" (click)="getAllPizzas()">Get your Orders</button>
+  <div [hidden]="!data.valid">
+    
+    <hr>
+    <br>
+    <h2> Your Orders </h2>
+    <br>
+    - pizzaId :- {{pizzaform.pizzaId}} <br>
+    - pizzaName :- {{pizzaform.pizzaName}} <br>
+    - topping :- {{pizzaform.topping}} <br>
+    - size :- {{pizzaform.size}} <br>
+    - quantity :- {{ pizzaform.quantity }} <br>
+
+    <!-- <dl *ngFor="let d of pizzaform">
+      <dt style="color: red; text-align: center; font-size: 25px;">{{d.pizzaId}}. {{d.pizzaName}}</dt>
+      <dd style="display: position; left:10px; top:0px"> <span>Category :</span> {{d.topping}}</dd>
+      <dd id="description">{{d.size}}</dd>
+      <hr>
+      {{d.quantity}}
+  </dl> -->
+
+
+
+    <br>
+    <hr>
+</div>
+<br>
+<button mat-raised-button color="primary" (click)="logout()" routerLink="/login"> LogOut </button>
+<br>

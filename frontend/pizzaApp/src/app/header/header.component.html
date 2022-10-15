@@ -1,0 +1,39 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">The Pizza Store</h1>
+      <button mat-button style="margin-left: 550px;" routerLink="/signup">Sign Up</button>
+      <button mat-button style="margin-left: 30px;" routerLink="/login">Log In</button>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+                   <mat-nav-list style="width:90px; padding: 10px 10px;">
+                    <button mat-button><a routerLink="/home"> Home </a></button>
+                    <button mat-button><a routerLink="/dashboard"> Store </a></button>
+                    <button mat-button><a routerLink="/signup">Sign Up</a></button>
+                    <button mat-button><a routerLink="/login">Log In</a></button>
+                    <!-- <a>Home</a>
+                    <br>
+                    <a href="">LogIn Page</a>
+                    <br>
+                    <a href="">SignUp Page</a> -->
+                  </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content style="margin-top:30px; margin-left: 130px; margin-right: 60px; margin-bottom: 60px; padding-bottom: 70px;">
+        
+        <router-outlet></router-outlet>  
+        <!-- <app-login></app-login> -->
+          <!-- <app-signup></app-signup> -->
+          <!-- <app-dashboard></app-dashboard> -->
+          <br> <br> <br> 
+          .
+      </mat-sidenav-content>
+     
+    </mat-sidenav-container>
+  </div>
+  
+  
+  

@@ -1,0 +1,69 @@
+ <!-- <p>payment works!</p> -->
+<!--
+ <div class="col-md-12">
+    <div class="card card-container">
+        <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <div class="alert alert-danger" role="alert" *ngIf="error">Payment failed: {{ error }}</div>
+                <div class="alert alert-success" role="alert" *ngIf="paymentId">Payment Success. Payment ID: {{ paymentId }}</div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label> <input type="text" class="form-control" name="name" [(ngModel)]="form.name" required minlength="3" maxlength="20" #name="ngModel" />
+                <div class="alert-danger" *ngIf="f.submitted && name.invalid">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="emailId">Email</label> <input type="text" class="form-control" name="emailId" [(ngModel)]="form.emailId" required #emailId="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && emailId.invalid">Email is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="mobileNo">Phone</label> <input type="number" class="form-control" name="mobileNo" [(ngModel)]="form.mobileNo" required minlength="10" maxlength="10"
+                    #mobileNo="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && mobileNo.invalid">
+                </div>
+            </div>
+            <div>
+                <label for="amount">Amount</label> <input type="number" class="form-control" name="amount" [(ngModel)]="form.amount" required #amount="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && amount.invalid">
+                </div>
+            </div>
+            <div>
+                <label for="discount">discount</label> <input type="number" class="form-control" name="discount" [(ngModel)]="form.discount" required #discount="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && discount.invalid">
+                </div>
+            </div>
+            <div>
+                <label for="currency"> currency </label> <input type="text" class="form-control" name="currency" [(ngModel)]="form.currency" required #currency="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && currency.invalid">
+                </div>
+            </div>
+            <div>
+                <label for="policy id">policy Id </label> <input type="text" class="form-control" name="customerPolicyId" [(ngModel)]="form.customerPolicyId" required #customerPolicyId="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && customerPolicyId.invalid">
+                </div>
+            </div>
+            <div>
+                <button>Pay</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+</div> -->
+
+<!-- <div style="padding: 40px;">
+<embed src="/src/assets/myPolicyDetails (1).pdf" type="application/pdf" width="100%" height="600px" />
+</div> -->
+<!-- <iframe src="/src/assets/sample.pdf" frameBorder="0" style="height: 800px; width: 400px;"> </iframe> -->
+
+<div>
+    <!-- <embed src="/src/assets/sample.pdf" type="application/pdf" width="100%" height="600px" /> -->
+
+    <button (click)="onClickDownloadPdf()">
+        Download PDF
+      </button>
+
+      <button (click)="open()"> 
+        open
+      </button>
+</div>

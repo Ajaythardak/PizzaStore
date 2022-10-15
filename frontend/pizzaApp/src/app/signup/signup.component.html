@@ -1,0 +1,48 @@
+
+<h1> Registration Form</h1>
+<br>
+<h3>Please provide some details to create an Account.</h3>
+<div style="padding-bottom: 70px;">
+<form (submit)="onSubmit(data.value)" #data="ngForm">
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your unique Id</mat-label>
+    <input matInput name='userId' #userId="ngModel" [(ngModel)]="signupform.userId" required>
+</mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+        <mat-label>Enter your Name</mat-label>
+        <input matInput name='userName' #userName="ngModel" [(ngModel)]="signupform.userName" required>
+    </mat-form-field>
+      <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your Email Id</mat-label>
+      <input matInput placeholder="pat@example.com" name='userEmail' #userEmail="ngModel" 
+      [(ngModel)]="signupform.userEmail" pattern="[a-zA-Z0-9]*@[a-z]*.[a-z]{2,3}" required>
+      <mat-error *ngIf="userEmail.invalid"> please enter a valid email id </mat-error>
+    </mat-form-field>
+     <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your Password</mat-label>
+      <input matInput type="password" minlength="8" name='password' #password="ngModel" 
+      [(ngModel)]="signupform.password" pattern="[a-zA-Z0-9]*.+" required>
+      <mat-error *ngIf="password.invalid"> please enter a valid password </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your Address</mat-label>
+        <input matInput name='address' #address="ngModel" 
+        [(ngModel)]="signupform.address" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your Contact No.</mat-label>
+        <input matInput pattern="[0-9]{10}" type="number" name='phoneNo' #phoneNo="ngModel" 
+        [(ngModel)]="signupform.phoneNo" required>
+        <mat-error *ngIf="phoneNo.invalid"> please enter a valid 10 digit phone number. </mat-error>
+    </mat-form-field>
+  </div>
+  <br>
+  <button mat-raised-button color="primary" [disabled]="!data.valid" >Submit</button>
+</form>
+</div>
